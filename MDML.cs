@@ -1,6 +1,7 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using MinecraftDistributionMapLiquidationer.Programs;
 
 namespace MinecraftDistributionMapLiquidationer;
+
 
 internal class MDML
 {
@@ -17,9 +18,8 @@ internal class MDML
     protected const string level_dat_old = "level.dat_old";
     protected const string session_lock = "session.lock";
 
-
     //default color
-    readonly protected static ConsoleColor defaultColor = Console.ForegroundColor;
+    protected static readonly ConsoleColor defaultColor = ConsoleColor.White;
 
     private static void Main(string[] args)
     {
@@ -28,6 +28,9 @@ internal class MDML
         Programs.Liquidation liquidation = new();
 
         string target = "";
+
+        //color
+        Console.ForegroundColor = defaultColor;
 
         //about
         Console.WriteLine
@@ -80,6 +83,16 @@ internal class MDML
                 ex.StackTrace);
             goto loop;
         }
+        catch (LevelFileNotFound ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine
+                ("**Error**\n" +
+                "This directory does not contain level.dat.\n\n" +
+                "<Stack Trace>\n" +
+                ex.StackTrace);
+            goto loop;
+        }
         catch (Exception ex)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -92,12 +105,10 @@ internal class MDML
         finally { Console.ForegroundColor = defaultColor; }
 
         //corret
-        if (target[target.Length..] == "\\")
+        if (target[^1..] == "\\")
         {
             Console.WriteLine("Folder paths have been corrected.\n");
-#pragma warning disable CA1806 // メソッドの結果を無視しない
-            target.Remove(target.Length);
-#pragma warning restore CA1806 // メソッドの結果を無視しない
+            target = target.Remove(target.Length - 1);
             Console.WriteLine(target);
         }
 

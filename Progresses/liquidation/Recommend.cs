@@ -16,7 +16,7 @@
                 File.Delete(Path.Combine(path, data, "raids.dat"));
                 Console.WriteLine(data + " has been delete.");
             }
-            if (exists[2] && 0 <= Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
+            if (exists[2] && 1 > Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
             {
                 Directory.Delete(Path.Combine(path, datapacks), true);
                 Console.WriteLine(datapacks + " has been delete.");

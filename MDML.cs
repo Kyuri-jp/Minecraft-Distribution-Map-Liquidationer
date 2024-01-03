@@ -1,5 +1,4 @@
 ﻿using MinecraftDistributionMapLiquidationer.Progresses;
-using System.Runtime.CompilerServices;
 
 namespace MinecraftDistributionMapLiquidationer;
 
@@ -42,7 +41,7 @@ internal class MDML
             ("Hello!\n" +
             "This is Minecraft distribution map liquidationer.\n" +
             "====================\n" +
-            "version 0.0.2\n" +
+            "version 0.0.2a\n" +
             "Kyuri\n" +
             "2024\n" +
             "MIT License https://opensource.org/license/mit/\n" +

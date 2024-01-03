@@ -1,4 +1,6 @@
 # Minecraft Distribution Map Liquidationer
+> [!CAUTION]
+> ### まだ開発段階です。本ツールを使用する場合は自己責任でお願いします
 ## About
 マインクラフトの配布マップをいい感じにまとめてZip圧縮するツールです
 ## How to Use

@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.IO.Compression;
+﻿using System.IO.Compression;
 
 namespace MinecraftDistributionMapLiquidationer.Programs
 {
@@ -84,7 +83,6 @@ namespace MinecraftDistributionMapLiquidationer.Programs
                 {
                     Directory.Delete(Path.Combine(path, DIM_1), true);
                     Console.WriteLine(DIM_1 + " has been delete.");
-
                 }
                 if (exists[5])
                 {
@@ -122,7 +120,134 @@ namespace MinecraftDistributionMapLiquidationer.Programs
 
             if (useRecommend.Key.ToString().Equals("N"))
             {
+                ConsoleKeyInfo yn;
+            //label
+            loopAdvancements:
 
+                //skip
+                if (!exists[0]) { goto loopData; }
+
+                //ask
+                Console.WriteLine
+                    ("Do you Delete " +
+                    advancements +
+                    " File? (y/n)");
+                yn = Console.ReadKey();
+
+                Console.WriteLine("");
+
+                //loop
+                if (!yn.Key.ToString().Equals("Y") &&
+                !yn.Key.ToString().Equals("N"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nSelect y/n.");
+                    Console.ForegroundColor = defaultColor;
+                    goto loopAdvancements;
+                }
+
+                //delete
+                if (yn.Key.ToString().Equals("Y"))
+                {
+                    Directory.Delete(Path.Combine(path, advancements), true);
+                    Console.WriteLine(advancements + " has been delete.");
+                }
+
+            //label
+            loopData:
+
+                //skip
+                if (!exists[1]) { goto loopDataPacks; }
+
+                //ask
+                Console.WriteLine
+                    ("Do you Delete " +
+                    data +
+                    " File? (y/n)");
+                yn = Console.ReadKey();
+
+                Console.WriteLine("");
+
+                //loop
+                if (!yn.Key.ToString().Equals("Y") &&
+                !yn.Key.ToString().Equals("N"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nSelect y/n.");
+                    Console.ForegroundColor = defaultColor;
+                    goto loopData;
+                }
+
+                //delete
+                if (yn.Key.ToString().Equals("Y"))
+                {
+                    foreach (string file in Directory.GetFiles(Path.Combine(path, data)))
+                    {
+                        Console.WriteLine
+                            ("Do you Delete " +
+                            file +
+                            " ?(y/n)");
+                        yn = Console.ReadKey();
+                        Console.WriteLine("");
+                        if (yn.Key.ToString().Equals("Y"))
+                        {
+                            File.Delete(file);
+                            Console.WriteLine(file + " has been delete.");
+                        }
+                    }
+
+                    if (0 <= Directory.GetDirectories(Path.Combine(path, data)).Length)
+                    {
+                        Directory.Delete(Path.Combine(path, data), true);
+                        Console.WriteLine("The data folder is now empty and has been deleted.");
+                    }
+                }
+
+            loopDataPacks:
+
+                //ask
+                Console.WriteLine
+                    ("Do you Delete " +
+                    datapacks +
+                    " File? (y/n)");
+                yn = Console.ReadKey();
+
+                Console.WriteLine("");
+
+                //loop
+                if (!yn.Key.ToString().Equals("Y") &&
+                !yn.Key.ToString().Equals("N"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\nSelect y/n.");
+                    Console.ForegroundColor = defaultColor;
+                    goto loopDataPacks;
+                }
+
+                //delete
+                if (yn.Key.ToString().Equals("Y"))
+                {
+                    foreach (string dir in Directory.GetDirectories(Path.Combine(path, datapacks)))
+                    {
+                        Console.WriteLine
+                            ("Do you Delete " +
+                            dir +
+                            " ?(y/n)");
+                        yn = Console.ReadKey();
+                        Console.WriteLine("");
+                        if (yn.Key.ToString().Equals("Y"))
+                        {
+                            Directory.Delete(dir, true);
+                            Console.WriteLine(dir + " has been delete.");
+                        }
+                    }
+
+                    if (0 <= Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
+                    {
+                        Directory.Delete(Path.Combine(path, datapacks), true);
+                        Console.WriteLine("The datapacks folder is now empty and has been deleted.");
+                    }
+                }
             }
         }
 

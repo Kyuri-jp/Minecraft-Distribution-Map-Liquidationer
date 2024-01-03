@@ -1,10 +1,12 @@
 ﻿namespace MinecraftDistributionMapLiquidationer.Programs
 {
-    class LevelFileNotFound : Exception { }
+    internal class LevelFileNotFound : Exception
+    { }
 
     internal class SelectFolder
     {
         private const string level_dat = "level.dat";
+
         internal string ReadFolderPath()
         {
             //ask

@@ -2,7 +2,6 @@
 
 namespace MinecraftDistributionMapLiquidationer;
 
-
 internal class MDML
 {
     //const

@@ -6,6 +6,7 @@
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 
+            //pros
             if (exists[0])
             {
                 Directory.Delete(Path.Combine(path, advancements), true);

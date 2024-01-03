@@ -1,4 +1,5 @@
-﻿using MinecraftDistributionMapLiquidationer.Programs;
+﻿using MinecraftDistributionMapLiquidationer.Progresses;
+using System.Runtime.CompilerServices;
 
 namespace MinecraftDistributionMapLiquidationer;
 
@@ -17,26 +18,31 @@ internal class MDML
     protected const string level_dat_old = "level.dat_old";
     protected const string session_lock = "session.lock";
 
+    protected static readonly string outPut = Path.Combine(Directory.GetCurrentDirectory(), "OutPut");
+
     //default color
     protected static readonly ConsoleColor defaultColor = ConsoleColor.White;
 
     private static void Main(string[] args)
     {
-        //instanses
-        Programs.SelectFolder selectFolder = new();
-        Programs.Liquidation liquidation = new();
+        SelectFolder selectFolder = new();
+        Liquidation liquidation = new();
 
         string target = "";
 
         //color
         Console.ForegroundColor = defaultColor;
 
+        //create folders
+        if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "OutPut")))
+            Directory.CreateDirectory(outPut);
+
         //about
         Console.WriteLine
             ("Hello!\n" +
             "This is Minecraft distribution map liquidationer.\n" +
             "====================\n" +
-            "version 0.0.1\n" +
+            "version 0.0.2\n" +
             "Kyuri\n" +
             "2024\n" +
             "MIT License https://opensource.org/license/mit/\n" +
@@ -58,10 +64,7 @@ internal class MDML
     loop:
 
         //ask
-        try
-        {
-            target = selectFolder.ReadFolderPath();
-        }
+        try { target = selectFolder.ReadFolderPath(); }
         catch (DirectoryNotFoundException ex)
         {
             Console.ForegroundColor = ConsoleColor.Red;

@@ -1,16 +1,15 @@
-﻿namespace MinecraftDistributionMapLiquidationer.Programs.liquidation
+﻿namespace MinecraftDistributionMapLiquidationer.Progresses.liquidation
 {
     internal class Custom : MDML
     {
         internal static void DoCustom(string path, List<bool> exists)
         {
-
             ConsoleKeyInfo yn;
         //label
         loopAdvancements:
 
             //skip
-            if (!exists[0]) { goto loopData; }
+            if (!exists[0]) goto loopData;
 
             //ask
             Console.WriteLine
@@ -42,7 +41,7 @@
         loopData:
 
             //skip
-            if (!exists[1]) { goto loopDataPacks; }
+            if (!exists[1]) goto loopDataPacks;
 
             //ask
             Console.WriteLine
@@ -92,7 +91,7 @@
         loopDataPacks:
 
             //skip
-            if (!exists[2]) { goto loopDIM1; }
+            if (!exists[2]) goto loopDIM1;
 
             //ask
             Console.WriteLine
@@ -142,7 +141,7 @@
         loopDIM1:
 
             //skip
-            if (!exists[3]) { goto loopDIM_1; }
+            if (!exists[3]) goto loopDIM_1;
 
             //ask
             Console.WriteLine
@@ -174,7 +173,7 @@
         loopDIM_1:
 
             //skip
-            if (!exists[4]) { goto loopPlayerData; }
+            if (!exists[4]) goto loopPlayerData;
 
             //ask
             Console.WriteLine
@@ -206,7 +205,7 @@
         loopPlayerData:
 
             //skip
-            if (!exists[5]) { goto loopPoi; }
+            if (!exists[5]) goto loopPoi;
 
             //ask
             Console.WriteLine
@@ -238,7 +237,7 @@
         loopPoi:
 
             //skip
-            if (!exists[6]) { goto loopStats; }
+            if (!exists[6]) goto loopStats;
 
             //ask
             Console.WriteLine
@@ -270,7 +269,7 @@
         loopStats:
 
             //skip
-            if (!exists[7]) { goto loopLevel; }
+            if (!exists[7]) goto loopLevel;
 
             //ask
             Console.WriteLine
@@ -302,7 +301,7 @@
         loopLevel:
 
             //skip
-            if (!exists[8]) { goto loopSession; }
+            if (!exists[8]) goto loopSession;
 
             //ask
             Console.WriteLine
@@ -334,7 +333,7 @@
         loopSession:
 
             //skip
-            if (!exists[9]) { goto zip; }
+            if (!exists[9]) goto zip;
 
             //ask
             Console.WriteLine

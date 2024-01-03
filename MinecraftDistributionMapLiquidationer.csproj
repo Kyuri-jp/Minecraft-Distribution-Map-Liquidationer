@@ -14,4 +14,8 @@
     <Company>$(Authors)</Company>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Progresses\CreateFolders\" />
+  </ItemGroup>
+
 </Project>

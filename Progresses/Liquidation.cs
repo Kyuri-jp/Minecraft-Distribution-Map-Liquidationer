@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.IO.Compression;
-
-namespace MinecraftDistributionMapLiquidationer.Programs
+﻿namespace MinecraftDistributionMapLiquidationer.Progresses
 {
     internal class Liquidation : MDML
     {
@@ -56,24 +53,16 @@ namespace MinecraftDistributionMapLiquidationer.Programs
             Console.WriteLine("");
 
             //recommend
-            if (useRecommend.Key.ToString().Equals("Y"))
-            {
-                liquidation.Recommend.DoRecommend(path, exists);
-            }
+            if (useRecommend.Key.ToString().Equals("Y")) liquidation.Recommend.DoRecommend(path, exists);
 
-            if (useRecommend.Key.ToString().Equals("N"))
-            {
-                liquidation.Custom.DoCustom(path, exists);
-            }
+            if (useRecommend.Key.ToString().Equals("N")) liquidation.Custom.DoCustom(path, exists);
         }
 
         internal static void StartZip(string path)
         {
-
             //zip
             Console.WriteLine("\nCompress in Zip format...");
-            Thread thread = new(new ParameterizedThreadStart(FolderZiper.Zip));
-            thread.Start(path);
+            FolderZiper.Zip(path, outPut);
         }
     }
 }

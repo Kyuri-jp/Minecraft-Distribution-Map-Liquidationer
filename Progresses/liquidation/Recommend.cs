@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MinecraftDistributionMapLiquidationer.Programs.liquidation
+﻿namespace MinecraftDistributionMapLiquidationer.Progresses.liquidation
 {
     internal class Recommend : MDML
     {
@@ -23,12 +21,12 @@ namespace MinecraftDistributionMapLiquidationer.Programs.liquidation
                 Directory.Delete(Path.Combine(path, datapacks), true);
                 Console.WriteLine(datapacks + " has been delete.");
             }
-            if (exists[3] && 100 < GetFolderSize(Path.Combine(path, DIM1)))
+            if (exists[3] && 100 >= GetFolderSize(Path.Combine(path, DIM1)))
             {
                 Directory.Delete(Path.Combine(path, DIM1), true);
                 Console.WriteLine(DIM1 + " has been delete.");
             }
-            if (exists[4] && 100 < GetFolderSize(Path.Combine(path, DIM_1)))
+            if (exists[4] && 100 >= GetFolderSize(Path.Combine(path, DIM_1)))
             {
                 Directory.Delete(Path.Combine(path, DIM_1), true);
                 Console.WriteLine(DIM_1 + " has been delete.");

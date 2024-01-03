@@ -1,4 +1,4 @@
-﻿namespace MinecraftDistributionMapLiquidationer.Programs
+﻿namespace MinecraftDistributionMapLiquidationer.Progresses
 {
     internal class LevelFileNotFound : Exception
     { }
@@ -15,14 +15,8 @@
             string? folderPath = Console.ReadLine();
 
             //exceptions
-            if (!Directory.Exists(folderPath))
-            {
-                throw new DirectoryNotFoundException();
-            }
-            if (!File.Exists(Path.Combine(folderPath, level_dat)))
-            {
-                throw new LevelFileNotFound();
-            }
+            if (!Directory.Exists(folderPath)) throw new DirectoryNotFoundException();
+            if (!File.Exists(Path.Combine(folderPath, level_dat))) throw new LevelFileNotFound();
             return folderPath ?? throw new NullReferenceException();
         }
     }

@@ -10,7 +10,7 @@
 ## Attention
 - (y/n)はYES/NOの意味です
 ## Environment
-.NET Core 8.0を使用しています
+.NET 8.0を使用しています
 ## License
 本ツールはMIT Lisenceに従います
 

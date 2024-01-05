@@ -10,6 +10,8 @@ namespace MinecraftDistributionMapLiquidationer.Progresses
             if (path == null)
                 throw new NullReferenceException();
 
+            Console.WriteLine("\nCompress in Zip format...");
+
             //ex
             try { ZipFile.CreateFromDirectory(path, Path.Combine(outPut, $"{Path.GetFileName(path)}.zip")); }
             catch (NullReferenceException ex)

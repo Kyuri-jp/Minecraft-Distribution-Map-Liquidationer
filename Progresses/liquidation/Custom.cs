@@ -80,7 +80,7 @@
                     }
                 }
 
-                if (0 <= Directory.GetDirectories(Path.Combine(path, data)).Length)
+                if (1 > Directory.GetFiles(Path.Combine(path, data)).Length)
                 {
                     Directory.Delete(Path.Combine(path, data), true);
                     Console.WriteLine("The data folder is now empty and has been deleted.");
@@ -130,7 +130,7 @@
                     }
                 }
 
-                if (0 <= Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
+                if (1 > Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
                 {
                     Directory.Delete(Path.Combine(path, datapacks), true);
                     Console.WriteLine("The datapacks folder is now empty and has been deleted.");
@@ -363,7 +363,7 @@
 
         //label
         zip:
-            Liquidation.StartZip(path);
+            FolderZiper.Zip(path, outPut);
         }
     }
 }

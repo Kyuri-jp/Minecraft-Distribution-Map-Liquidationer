@@ -15,7 +15,7 @@
             if (exists[1] && File.Exists(Path.Combine(path, data, "raids.dat")))
             {
                 File.Delete(Path.Combine(path, data, "raids.dat"));
-                Console.WriteLine(data + " has been delete.");
+                Console.WriteLine(data + "\\raids.dat has been delete.");
             }
             if (exists[2] && 1 > Directory.GetDirectories(Path.Combine(path, datapacks)).Length)
             {
@@ -60,7 +60,7 @@
 
             Console.ForegroundColor = ConsoleColor.White;
 
-            Liquidation.StartZip(path);
+            FolderZiper.Zip(path, outPut);
         }
 
         private static long GetFolderSize(string path)

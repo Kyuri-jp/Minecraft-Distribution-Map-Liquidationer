@@ -57,12 +57,5 @@
 
             if (useRecommend.Key.ToString().Equals("N")) liquidation.Custom.DoCustom(path, exists);
         }
-
-        internal static void StartZip(string path)
-        {
-            //zip
-            Console.WriteLine("\nCompress in Zip format...");
-            FolderZiper.Zip(path, outPut);
-        }
     }
 }

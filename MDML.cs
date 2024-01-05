@@ -1,12 +1,14 @@
 ﻿using MinecraftDistributionMapLiquidationer.Progresses;
+using System.Text.Json;
 
 namespace MinecraftDistributionMapLiquidationer;
 
 internal class MDML
 {
+
+
     //const
     protected const string advancements = "advancements";
-
     protected const string data = "data";
     protected const string datapacks = "datapacks";
     protected const string DIM1 = "DIM1";
@@ -41,10 +43,11 @@ internal class MDML
             ("Hello!\n" +
             "This is Minecraft distribution map liquidationer.\n" +
             "====================\n" +
-            "version 0.0.2a\n" +
+            "version 0.0.3\n" +
             "Kyuri\n" +
             "2024\n" +
             "MIT License https://opensource.org/license/mit/\n" +
+            "Copyright (c) [2024] [Kyuri]\n" +
             "====================\n");
 
         //folderinfo

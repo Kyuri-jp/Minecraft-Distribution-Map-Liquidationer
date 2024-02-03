@@ -4,6 +4,8 @@
     {
         internal void Liquidationer(string path)
         {
+            string tempPath = $"{Path.GetTempPath()}\\{path[3..]}";
+
             //exists
             List<bool> exists = [
                 Directory.Exists(Path.Combine(path, advancements)),
@@ -51,11 +53,12 @@
             }
 
             Console.WriteLine("");
+            CopyDirectory(path, tempPath, true);
 
             //recommend
-            if (useRecommend.Key.ToString().Equals("Y")) liquidation.Recommend.DoRecommend(path, exists);
+            if (useRecommend.Key.ToString().Equals("Y")) liquidation.Recommend.DoRecommend(tempPath, exists);
 
-            if (useRecommend.Key.ToString().Equals("N")) liquidation.Custom.DoCustom(path, exists);
+            if (useRecommend.Key.ToString().Equals("N")) liquidation.Custom.DoCustom(tempPath, exists);
         }
     }
 }

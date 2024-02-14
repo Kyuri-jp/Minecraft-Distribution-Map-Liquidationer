@@ -1,4 +1,7 @@
 # Minecraft Distribution Map Liquidationer
+[![activity](https://img.shields.io/github/commit-activity/m/Kyuri-jp/Minecraft-Distribution-Map-Liquidationer?label=commit&logo=github)](https://github.com/Kyuri-jp/Minecraft-Distribution-Map-Liquidationer/commits/master)
+[![downloads](https://img.shields.io/github/downloads/Kyuri-jp/Minecraft-Distribution-Map-Liquidationer/total?logo=github)](https://github.com/Kyuri-jp/Minecraft-Distribution-Map-Liquidationer/releases/latest)
+
 > [!CAUTION]
 > ### まだ開発段階です。本ツールを使用する場合は自己責任でお願いします
 ## About

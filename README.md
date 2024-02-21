@@ -18,6 +18,4 @@
 ## License
 本ツールはMIT Lisenceに従います
 
-Copyright (c) [2024] [Kyuri]
-
-   
+Copyright (c) 2024 Kyuri
